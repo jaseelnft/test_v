@@ -6,26 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.AuthModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
 const mongoose_1 = require("@nestjs/mongoose");
-const app_schema_1 = require("./schemas/app.schema");
-require('dotenv').config();
-let AppModule = class AppModule {
+const jwt_1 = require("@nestjs/jwt");
+const auth_service_1 = require("./auth.service");
+const auth_controller_1 = require("./auth.controller");
+const app_schema_1 = require("../schemas/app.schema");
+const user_schama_1 = require("../schemas/user.schama");
+let AuthModule = class AuthModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.AuthModule = AuthModule;
+exports.AuthModule = AuthModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot(process.env.DB ?? ''),
             mongoose_1.MongooseModule.forFeature([
+                { name: user_schama_1.Customers.name, schema: user_schama_1.CustomersSchema },
                 { name: app_schema_1.AccesLogs.name, schema: app_schema_1.AccesLogsSchema },
             ]),
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [auth_controller_1.AuthController],
+        providers: [auth_service_1.AuthService, jwt_1.JwtService],
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], AuthModule);
+//# sourceMappingURL=auth.module.js.map
