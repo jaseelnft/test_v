@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AccesLogs, AccesLogsSchema } from './app.schema';
+import { AccesLogs, AccesLogsSchema } from './schemas/app.schema';
 require('dotenv').config();
 
 @Module({
