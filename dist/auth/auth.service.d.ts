@@ -1,6 +1,5 @@
 import { JwtService } from '@nestjs/jwt';
 import { Model } from 'mongoose';
-import * as nodemailer from 'nodemailer';
 import { AdminLoginDto, AdminLoginResDto, CustLoginReqDto, CustLoginResDto, CustOtpReqDto, CustOtpResDto, VerifyAdminDto, VerifyAdminResDto } from './auth.dto';
 import { AccesLogs } from 'src/schemas/app.schema';
 import { Customers } from 'src/schemas/user.schama';
@@ -9,7 +8,7 @@ export declare class AuthService {
     private accesLogsModel;
     private jwtService;
     private transporter;
-    constructor(custModel: Model<Customers>, accesLogsModel: Model<AccesLogs>, jwtService: JwtService, transporter: nodemailer.Transporter);
+    constructor(custModel: Model<Customers>, accesLogsModel: Model<AccesLogs>, jwtService: JwtService);
     private readonly CUST_SECRET;
     private readonly ADMIN_SECRET;
     private readonly ADMIN_EMAIL;

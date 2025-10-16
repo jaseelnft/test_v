@@ -44,7 +44,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
@@ -52,7 +51,6 @@ const jwt_1 = require("@nestjs/jwt");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const nodemailer = __importStar(require("nodemailer"));
-require('dotenv').config();
 const app_schema_1 = require("../schemas/app.schema");
 const user_schama_1 = require("../schemas/user.schama");
 let AuthService = class AuthService {
@@ -60,11 +58,10 @@ let AuthService = class AuthService {
     accesLogsModel;
     jwtService;
     transporter;
-    constructor(custModel, accesLogsModel, jwtService, transporter) {
+    constructor(custModel, accesLogsModel, jwtService) {
         this.custModel = custModel;
         this.accesLogsModel = accesLogsModel;
         this.jwtService = jwtService;
-        this.transporter = transporter;
         this.transporter = nodemailer.createTransport({
             service: process.env.MAILER_SERVER,
             auth: {
@@ -183,6 +180,6 @@ exports.AuthService = AuthService = __decorate([
     __param(1, (0, mongoose_1.InjectModel)(app_schema_1.AccesLogs.name)),
     __metadata("design:paramtypes", [mongoose_2.Model,
         mongoose_2.Model,
-        jwt_1.JwtService, typeof (_a = typeof nodemailer !== "undefined" && nodemailer.Transporter) === "function" ? _a : Object])
+        jwt_1.JwtService])
 ], AuthService);
 //# sourceMappingURL=auth.service.js.map

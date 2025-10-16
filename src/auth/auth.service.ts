@@ -7,8 +7,6 @@ import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import * as nodemailer from 'nodemailer';
-require('dotenv').config();
-
 import {
   AdminLoginDto,
   AdminLoginResDto,
@@ -24,11 +22,11 @@ import { Customers } from 'src/schemas/user.schama';
 
 @Injectable()
 export class AuthService {
+  private transporter: nodemailer.Transporter;
   constructor(
     @InjectModel(Customers.name) private custModel: Model<Customers>,
     @InjectModel(AccesLogs.name) private accesLogsModel: Model<AccesLogs>,
     private jwtService: JwtService,
-    private transporter: nodemailer.Transporter,
   ) {
     this.transporter = nodemailer.createTransport({
       service: process.env.MAILER_SERVER,
