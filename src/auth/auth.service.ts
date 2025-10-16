@@ -7,6 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import * as nodemailer from 'nodemailer';
+require('dotenv').config();
 
 import {
   AdminLoginDto,

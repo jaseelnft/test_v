@@ -52,6 +52,7 @@ const jwt_1 = require("@nestjs/jwt");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const nodemailer = __importStar(require("nodemailer"));
+require('dotenv').config();
 const app_schema_1 = require("../schemas/app.schema");
 const user_schama_1 = require("../schemas/user.schama");
 let AuthService = class AuthService {
