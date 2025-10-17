@@ -15,6 +15,8 @@ let Customers = class Customers {
     name;
     email;
     phone;
+    isEmail;
+    isPhone;
 };
 exports.Customers = Customers;
 __decorate([
@@ -35,6 +37,14 @@ __decorate([
     (0, mongoose_1.Prop)({ type: String }),
     __metadata("design:type", String)
 ], Customers.prototype, "phone", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: Boolean, default: false }),
+    __metadata("design:type", Boolean)
+], Customers.prototype, "isEmail", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: Boolean, default: false }),
+    __metadata("design:type", Boolean)
+], Customers.prototype, "isPhone", void 0);
 exports.Customers = Customers = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Customers);

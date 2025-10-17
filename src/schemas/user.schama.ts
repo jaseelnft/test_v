@@ -14,6 +14,10 @@ export class Customers {
   email: string;
   @Prop({ type: String })
   phone: string;
+  @Prop({ type: Boolean, default: false })
+  isEmail: boolean;
+  @Prop({ type: Boolean, default: false })
+  isPhone: boolean;
 }
 
 export const CustomersSchema = SchemaFactory.createForClass(Customers);

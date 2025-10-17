@@ -74,7 +74,7 @@ let AuthService = class AuthService {
     ADMIN_SECRET = process.env.ADMIN_JWT_SECRET || '';
     ADMIN_EMAIL = process.env.ADMIN_EMAIL || '';
     _generateOTP() {
-        return "000000";
+        return '000000';
         return Math.floor(Math.random() * 1000000)
             .toString()
             .padStart(6, '0');

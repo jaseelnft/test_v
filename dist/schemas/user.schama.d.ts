@@ -2,6 +2,8 @@ export declare class Customers {
     name: string;
     email: string;
     phone: string;
+    isEmail: boolean;
+    isPhone: boolean;
 }
 export declare const CustomersSchema: import("mongoose").Schema<Customers, import("mongoose").Model<Customers, any, any, any, import("mongoose").Document<unknown, any, Customers, any, {}> & Customers & {
     _id: import("mongoose").Types.ObjectId;
